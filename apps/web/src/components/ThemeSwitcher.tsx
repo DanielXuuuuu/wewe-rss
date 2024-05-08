@@ -58,14 +58,7 @@ export function ThemeSwitcher(props) {
           <input {...getInputProps()} />
         </VisuallyHidden>
         <div
-          {...getWrapperProps()}
-          className={slots.wrapper({
-            class: [
-              'w-8 h-8',
-              'flex items-center justify-center',
-              'rounded-lg bg-default-100 hover:bg-default-200',
-            ],
-          })}
+          className="w-8 h-8 flex items-center justify-center rounded-lg bg-default-100 hover:bg-default-200"
         >
           {isSelected ? <SunIcon /> : <MoonIcon />}
         </div>

@@ -131,17 +131,16 @@ const Feeds = () => {
       <div className="h-full flex justify-between">
         <div className="w-64 p-4 h-full">
           <div className="pb-4 flex justify-between align-middle items-center">
+            <div className="font-normal text-sm">
+              共 {feedData?.items.length || 0} 个订阅
+            </div>
             <Button
               color="primary"
               size="sm"
               onPress={onOpen}
-              endContent={<PlusIcon />}
             >
-              添加
+              <div className="text-sm">添加</div>
             </Button>
-            <div className="font-normal text-sm">
-              共{feedData?.items.length || 0}个订阅
-            </div>
           </div>
 
           {feedData?.items ? (
@@ -155,7 +154,7 @@ const Feeds = () => {
                   key={''}
                   href={`/feeds`}
                   className={isActive('') ? 'bg-primary-50 text-primary' : ''}
-                  startContent={<Avatar name="ALL"></Avatar>}
+                  startContent={<Avatar size='sm' name="ALL"></Avatar>}
                 >
                   全部
                 </ListboxItem>
@@ -167,10 +166,10 @@ const Feeds = () => {
                     <ListboxItem
                       href={`/feeds/${item.id}`}
                       className={
-                        isActive(item.id) ? 'bg-primary-50 text-primary' : ''
+                        isActive(item.id) ? 'bg-primary-50 text-primary mb-2' : 'mb-2'
                       }
                       key={item.id}
-                      startContent={<Avatar src={item.mpCover}></Avatar>}
+                      startContent={<Avatar size="sm" src={item.mpCover}></Avatar>}
                     >
                       {item.mpName}
                     </ListboxItem>
@@ -183,10 +182,10 @@ const Feeds = () => {
           )}
         </div>
         <div className="flex-1 h-full flex flex-col">
-          <div className="p-4 pb-0 flex justify-between">
-            <h3 className="text-medium font-mono flex-1 overflow-hidden text-ellipsis break-keep text-nowrap pr-1">
+          <div className="p-4 pb-0 flex justify-between items-center h-12">
+            <div className="text-medium font-mono flex-1 overflow-hidden text-ellipsis break-keep text-nowrap pr-1 text-sm">
               {currentMpInfo?.mpName || '全部'}
-            </h3>
+            </div>
             {currentMpInfo ? (
               <div className="flex h-5 items-center space-x-4 text-small">
                 <div className="font-light">
@@ -257,8 +256,8 @@ const Feeds = () => {
                   </Link>
                 </Tooltip>
 
-                <Divider orientation="vertical" />
-                <Tooltip content={<div>可添加.atom/.rss/.json格式输出</div>}>
+                {/* <Divider orientation="vertical" /> */}
+                {/* <Tooltip content={<div>可添加.atom/.rss/.json格式输出</div>}>
                   <Link
                     size="sm"
                     showAnchorIcon
@@ -268,7 +267,7 @@ const Feeds = () => {
                   >
                     RSS
                   </Link>
-                </Tooltip>
+                </Tooltip> */}
               </div>
             ) : (
               <div className="flex gap-2">
@@ -295,7 +294,7 @@ const Feeds = () => {
                       : '更新全部'}
                   </Link>
                 </Tooltip>
-                <Link
+                {/* <Link
                   href="#"
                   color="foreground"
                   onClick={handleExportOpml}
@@ -312,11 +311,11 @@ const Feeds = () => {
                   color="foreground"
                 >
                   RSS
-                </Link>
+                </Link> */}
               </div>
             )}
           </div>
-          <div className="p-2 overflow-y-auto">
+          <div className="p-4 overflow-y-auto">
             <ArticleList></ArticleList>
           </div>
         </div>

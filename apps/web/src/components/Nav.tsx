@@ -47,7 +47,7 @@ const Nav = () => {
   return (
     <div>
       <Navbar isBordered>
-        <Tooltip
+        {/* <Tooltip
           content={
             <div className="p-1">
               {isFoundNewVersion && (
@@ -63,9 +63,9 @@ const Nav = () => {
             </div>
           }
           placement="left"
-        >
+        > */}
           <NavbarBrand className="cursor-default">
-            <Badge
+            {/* <Badge
               content={isFoundNewVersion ? '' : null}
               color="danger"
               size="sm"
@@ -76,11 +76,11 @@ const Nav = () => {
                 className="mr-2"
                 src="https://r2-assets.111965.xyz/wewe-rss.png"
               ></Image>
-            </Badge>
-            <p className="font-bold text-inherit">WeWe RSS</p>
+            </Badge> */}
+            <p className="font-bold text-inherit">新闻小站</p>
           </NavbarBrand>
-        </Tooltip>
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        {/* </Tooltip> */}
+        {/* <NavbarContent className="hidden sm:flex gap-4" justify="center">
           {navbarItemLink.map((item) => {
             return (
               <NavbarItem
@@ -93,16 +93,16 @@ const Nav = () => {
               </NavbarItem>
             );
           })}
-        </NavbarContent>
+        </NavbarContent> */}
         <NavbarContent justify="end">
           <ThemeSwitcher></ThemeSwitcher>
-          <Link
+          {/* <Link
             href="https://github.com/cooderl/wewe-rss"
             target="_blank"
             color="foreground"
           >
             <GitHubIcon />
-          </Link>
+          </Link> */}
         </NavbarContent>
       </Navbar>
     </div>
